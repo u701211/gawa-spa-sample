@@ -1,0 +1,3 @@
+[submodule "gawa"]
+	path = gawa
+	url = https://github.com/u701211/gawa.git

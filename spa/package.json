@@ -1,0 +1,26 @@
+{
+  "name": "spa_auth0",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode spa",
+    "gawa": "vite --mode gawa",
+    "build": "tsc && vite build --mode gawa",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@auth0/auth0-react": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.57.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "devcert": "^1.2.2",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}

@@ -1,0 +1,51 @@
+@use './common.module.scss';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .auth {
+    font-size: 1rem;
+    color: darkblue;
+  }
+
+  .function {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      min-width: 40%;
+    }
+
+    a {
+      margin: 20px 0;
+    }
+
+    button+button {
+      margin-top: 10px;
+    }
+  }
+
+  .pageEvents {
+    font-size: 0.8rem;
+    line-height: 1rem;
+
+    .date {
+      margin-right: 10px;
+    }
+
+    .value {
+      color: darkred;
+    }
+  }
+}
