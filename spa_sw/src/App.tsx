@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [notificationPermission, setNotificationPermission] = useState(Notification.permission)
+  const [notificationPermission, setNotificationPermission] = useState<NotificationPermission>()
 
   // const registerPushNotification = async () => {
   //   debugger;
@@ -25,15 +25,24 @@ function App() {
   // };
 
   const setNotification = async () => {
-    if (Notification.permission !== 'granted') {
-      Notification.requestPermission().then(function (permission) {
-        setNotificationPermission(Notification.permission);
-        if (permission === 'granted') {
-          console.log('通知が許可されました');
-        } else {
-          console.log('通知が拒否されました.');
-        }
-      });
+    if ('Notification' in window) {
+      setNotificationPermission(Notification.permission);
+      if (Notification.permission !== 'granted') {
+        Notification.requestPermission()
+          .then(permission => {
+            if (permission === 'granted') {
+              console.log('通知が許可されました');
+            } else {
+              console.log('通知が拒否されました.');
+            }
+          }).then(() => {
+            debugger;
+            setNotificationPermission(Notification.permission);
+          });
+      }
+    }
+    else {
+      alert('Notificationがありません');
     }
   }
 

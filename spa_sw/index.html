@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="./vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript" src="./sw_registration.js"></script>
   <title>Vite + React + TS</title>
 </head>
 
@@ -12,22 +13,5 @@
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
-
-<script type="text/javascript">
-  if (navigator.serviceWorker) {
-    navigator.serviceWorker
-      .register('/sw.js')
-      .then((registration) => {
-        // 登録成功
-        // debugger;
-        console.debug(`【SW : register】登録成功 scope:`, registration.scope);
-      })
-      .catch((error) => {
-        // 登録失敗
-        // debugger;
-        console.error(`【SW : register】登録失敗`, registration.scope);
-      });
-  }
-</script>
 
 </html>
